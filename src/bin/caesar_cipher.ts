@@ -19,7 +19,10 @@ const DEFAULT_OPTIONS: defaultEncryptionOptions = {
     whitespace: true
 };
 
-export default function encrypt(text: string, options?: encryptionOptions) {
+export default function caesarCipher(
+    text: string,
+    options?: encryptionOptions
+) {
     const ALPHABET = (
             options?.alphabet ?? DEFAULT_OPTIONS.alphabet
         ).toLocaleLowerCase(),
@@ -33,9 +36,8 @@ export default function encrypt(text: string, options?: encryptionOptions) {
 
     if (SHIFT > ALPHABET_LENGTH || SHIFT < -ALPHABET_LENGTH) return;
 
-    for (let i = 0, l = text.length; i < l; i++) {
-        const CHARACTER = text[i],
-            CHARACTER_INDEX = ALPHABET.indexOf(CHARACTER.toLocaleLowerCase());
+    for (const CHARACTER of text) {
+        const CHARACTER_INDEX = ALPHABET.indexOf(CHARACTER.toLocaleLowerCase());
 
         let shiftedIndex = 0;
 
@@ -43,7 +45,6 @@ export default function encrypt(text: string, options?: encryptionOptions) {
             if (!/^\s$/.test(CHARACTER) || WHITESPACE) {
                 encryptedText += CHARACTER;
             }
-
             continue;
         }
 

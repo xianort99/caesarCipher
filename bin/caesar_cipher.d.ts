@@ -4,6 +4,6 @@ interface encryptionOptions {
     casing?: 'default' | 'uppercase' | 'lowercase';
     whitespace?: boolean;
 }
-export default function encrypt(text: string, options?: encryptionOptions): string | undefined;
+export default function caesarCipher(text: string, options?: encryptionOptions): string | undefined;
 export {};
-//# sourceMappingURL=encrypt.d.ts.map
+//# sourceMappingURL=caesar_cipher.d.ts.map
