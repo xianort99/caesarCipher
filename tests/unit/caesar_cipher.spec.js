@@ -37,5 +37,8 @@ describe('#caesarCipher', function () {
     it('should output a whitespace filtered string', function () {
         chai_1.expect(caesar_cipher_1.default(STRING_WITH_WHITESPACE, { whitespace: false })).to.equal('khoorzruog');
     });
+    it("should output 'undefined' when shift if greater or lower then alphabet length", function () {
+        chai_1.expect(caesar_cipher_1.default(STRING, { shift: 27 })).to.be.undefined;
+    });
 });
 //# sourceMappingURL=caesar_cipher.spec.js.map
