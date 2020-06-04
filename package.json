@@ -12,7 +12,7 @@
     "scripts": {
         "test": "mocha",
         "tsBuild": "tsc -b src",
-        "tsWatchBuild": "tsc -b -w src",
+        "tsWatchBuild": "tsc -b --watch src",
         "lint": "npx eslint src"
     },
     "keywords": [
